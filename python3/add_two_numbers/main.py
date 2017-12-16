@@ -27,8 +27,10 @@ class Solution:
                 remainder = temp_sum
             r.next = ListNode(remainder)
             # move to next digit
-            l1 = l1.next if l1 != None
-            l2 = l2.next if l2 != None
+            if l1 != None:
+                l1 = l1.next
+            if l2 != None:
+                l2 = l2.next
             r = r.next
         # deal with last digit
         if carry != 0:

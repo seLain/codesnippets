@@ -14,11 +14,4 @@ public class UniqueCharsCheck {
 		}
 		return true;
 	}
-
-	public static void main(String args[]){
-		UniqueCharsCheck checker = new UniqueCharsCheck();
-		System.out.println(checker.check("Unique")?"Yes":"No");
-		System.out.println(checker.check("UniqUe")?"Yes":"No");
-	}
-
 }

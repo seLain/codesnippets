@@ -1,4 +1,5 @@
 import bisect
+from collections import defaultdict
 
 class Solution:
     def dailyTemperatures(self, temperatures):
@@ -13,12 +14,9 @@ class Solution:
             return [0]
 
         # get the y axis of temperatures figure
-        dict_temperatures = {}  # {temperature:[index1, index2, ...]}
+        dict_temperatures = defaultdict(list) # {temperature:[index1, index2, ...]}
         for i in range(0, len(temperatures)):
-            if temperatures[i] in dict_temperatures.keys():
-                dict_temperatures[temperatures[i]].append(i)
-            else:
-                dict_temperatures[temperatures[i]] = [i]
+            dict_temperatures[temperatures[i]].append(i)
 
         # ordering occurred temperatures
         ordered_temperatures = sorted(dict_temperatures.keys())

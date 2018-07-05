@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <!-- Include eel.js - note this file doesn't exist in the 'web' directory -->
+        <script type="text/javascript" src="/eel.js"></script>
+        <script type="text/javascript">
+        
+        eel.expose(js_update_message);
+        function js_update_message(speaker, message) {
+            new_div = document.createElement('div');
+            new_div.innerHTML = '<b>' + speaker + '</b> says: ' + message;
+            msg_div = document.getElementById('messages').appendChild(new_div);
+        }
+        
+        </script>
+    </head>
+    
+    <body>
+        <div id='messages'></div>
+    </body>
+</html>
